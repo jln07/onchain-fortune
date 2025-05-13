@@ -40,9 +40,10 @@ setTimeout(() => {
 }, 400);
 
 
-    } catch (err: any) {
+    } catch {
       setError("Something went wrong.");
-    } finally {
+    }
+     finally {
       setLoading(false);
     }
   }
