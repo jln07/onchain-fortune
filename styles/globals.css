@@ -1,26 +1,80 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(-45deg, #230130, #010b53, #0099ff);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+  color: white;
+  overflow-x: hidden;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+button {
+  background: #7b5dfa;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  color: #aaa;
+}
+
+.fortune-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #1f1f2f;
+  border-radius: 10px;
+  border: 1px solid #333;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInFortune 0.8s ease-out;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+a.tx-link {
+  color: #7b5dfa;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  border-bottom: 1px dashed transparent;
+}
+
+a.tx-link:hover {
+  color: #a68dfd;
+  border-bottom: 1px dashed #a68dfd;
+  transform: scale(1.03);
 }
